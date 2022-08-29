@@ -109,7 +109,10 @@ export class BasicGroup extends PureComponent {
   }
 
   showNot() {
-    const {config} = this.props;
+    const {config, isRoot} = this.props;
+    if (!config.settings.canShowNotOnRoot) {
+      return !isRoot;
+    }
     return config.settings.showNot;
   }
 
@@ -205,10 +208,13 @@ export class BasicGroup extends PureComponent {
     return this.props.allowFurtherNesting;
   }
   canAddRule() {
-    const maxNumberOfRules = this.props.config.settings.maxNumberOfRules;
-    const totalRulesCnt = this.props.totalRulesCnt;
+    const { maxNumberOfRules, canShowAddRuleOnRoot } = this.props.config.settings;
+    const { totalRulesCnt, isRoot } = this.props;
     if (maxNumberOfRules) {
       return totalRulesCnt < maxNumberOfRules;
+    }
+    if (!canShowAddRuleOnRoot) {
+      return !isRoot;
     }
     return true;
   }

@@ -861,6 +861,8 @@ export interface BehaviourSettings {
   removeEmptyGroupsOnLoad?: boolean,
   removeIncompleteRulesOnLoad?: boolean,
   removeInvalidMultiSelectValuesOnLoad?: boolean,
+  canShowAddRuleOnRoot?: boolean,
+  canShowNotOnRoot?: boolean,
 }
 
 export interface OtherSettings {

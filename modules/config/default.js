@@ -88,8 +88,9 @@ export const settings = {
   valueSourcesPopupTitle: "Select value source",
   removeRuleConfirmOptions: null,
   removeGroupConfirmOptions: null,
-
   defaultGroupConjunction: "AND",
+  canShowAddRuleOnRoot: true,
+  canShowNotOnRoot: true,
   jsonLogic: {
     groupVarKey: "var",
     altVarKey: "var",
